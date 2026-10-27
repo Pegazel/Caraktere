@@ -1,0 +1,11 @@
+CARAKTÈRE — site web
+
+OUVRIR LE SITE
+1. Décompressez cette archive dans un dossier.
+2. Ouvrez index.html dans votre navigateur.
+3. Pour mettre le site en ligne, déposez tout le contenu du dossier (index.html, les pages HTML et le dossier assets) sur votre hébergeur.
+
+EXPLORATION 3D
+L’explorateur APEX est chargé depuis un dépôt externe : https://github.com/filan214/F1---2026-Car-Details. Une connexion Internet est nécessaire pour cette section. Les autres pages et médias sont inclus dans l’archive.
+
+Crédit du modèle : concept F1 2026 de Qvist_designs, sous licence CC BY 4.0, selon les informations du projet APEX.
