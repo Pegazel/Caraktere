@@ -1,4 +1,7 @@
 <!doctype html><html><head>
+<link rel="icon" href="./favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" href="./favicon-32.png?v=3" sizes="32x32">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png?v=3">
 <link rel="preconnect" href="https://raw.githack.com" crossorigin>
 <link rel="preconnect" href="https://github.com" crossorigin><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><style>
 
@@ -12,7 +15,7 @@
 .apex-frame-foot{border-top:1px solid #302c2b;color:#88847e;font-size:.5rem}
 .apex-frame-foot a{color:var(--red);text-decoration:none;white-space:nowrap}
 .apex-frame-foot a:hover{color:var(--cream)}
-.apex-note{font-size:.85rem!important;color:var(--soft);max-width:68ch}
+.apex-note{font-size:.85rem!important;color:var(--soft);max-width:none;width:100%}
 @media(max-width:700px){.apex-frame{height:760px}.apex-frame-top,.apex-frame-foot{align-items:flex-start;flex-direction:column;gap:7px}.apex-frame-foot{font-size:.48rem}}
 @media(prefers-reduced-motion:reduce){.apex-frame-shell{scroll-behavior:auto}}
 
@@ -26,7 +29,7 @@
 <meta property="og:description" content="Le podcast qui décrypte l'automobile : design, identité de marque, histoire. Pourquoi une voiture nous marque-t-elle ?">
 <meta property="og:image" content="assets/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="CARAKTÈRE, ce que les voitures racontent : une Renault 5 jaune aux phares bleus">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="CARAKTÈRE · Ce que les voitures racontent"><meta name="twitter:description" content="Le podcast qui décrypte l'automobile : design, marque, histoire."><meta name="twitter:image" content="assets/og.jpg">
-<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png"><link rel="icon" href="assets/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
 <link rel="preload" as="image" href="assets/ep01-r5.jpg">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -208,7 +211,7 @@ ul.tags{margin:0;padding:0}
 .card{background:var(--ink2);border:1px solid var(--line);border-radius:18px;padding:clamp(18px,3vw,30px);display:flex;flex-direction:column;gap:1rem;min-width:0;overflow:hidden}
 .card h3{margin:0;font:400 clamp(1.5rem,4.6vw,2.2rem)/1 var(--display);text-transform:uppercase}
 .card .t{font:700 .62rem var(--body);letter-spacing:.3em;text-transform:uppercase;color:var(--red-t)}
-.card p{margin:0;color:var(--soft);font-size:.95rem;max-width:30rem}
+.card p{margin:0;color:var(--soft);font-size:.95rem;max-width:none;width:100%}
 .vis{position:relative;height:200px;border-radius:12px;background:#0a0b0c;overflow:hidden;display:grid;place-items:center}
 .bars{display:flex;align-items:flex-end;gap:5px;height:100%;padding:18px 18px 0;width:100%}
 .bars i{flex:1;background:linear-gradient(var(--red),#7d1d18);border-radius:3px 3px 0 0;height:20%;animation:bar 1.1s ease-in-out infinite;animation-delay:calc(var(--i)*-.13s);animation-duration:calc(.8s + var(--j)*.12s)}
@@ -339,12 +342,6 @@ input[type=range]{flex:1;accent-color:var(--red);height:28px}
 .legal{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;margin-top:1.4rem;font:500 .78rem var(--body)}
 .legal a,.legal button{color:var(--soft);text-decoration:underline;text-underline-offset:3px;min-height:32px;display:inline-flex;align-items:center}
 .legal a:hover,.legal button:hover{color:var(--cream)}
-.cb{position:fixed;z-index:95;left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));max-width:760px;margin:0 auto;background:#15171a;border:1px solid #3a3d44;border-radius:16px;padding:16px 18px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;box-shadow:0 18px 60px rgba(0,0,0,.7);transform:translateY(160%);visibility:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1),visibility 0s .5s}
-.cb.show{transform:none;visibility:visible;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.cb p{margin:0;flex:1 1 280px;font-size:.86rem;line-height:1.5;color:#d6d4cc}
-.cb p a{color:var(--cream)}
-.cb .acts{display:flex;gap:.6rem;flex:0 0 auto}
-.cb .btn{padding:.8rem 1.15rem;min-height:44px;font-size:.62rem}
 .dark-veil{position:fixed;inset:0;z-index:90;background:#000;opacity:0;pointer-events:none;transition:opacity 1.2s ease;display:grid;place-items:center;text-align:center;padding:2rem}
 .dark-veil.on{opacity:1;pointer-events:auto}
 .dark-veil .bulbs{display:flex;gap:2.2rem;margin-bottom:2rem}
@@ -354,6 +351,14 @@ input[type=range]{flex:1;accent-color:var(--red);height:28px}
 @media(prefers-reduced-motion:reduce){
   .rv{transition:none}.brand .ch{transition:none}.row{transform:none!important}.eq i,.bars i,.start::before,.go i,.gate-hint{animation:none}
 }
+
+/* Curseur minimal : point rouge et halo discret, uniquement sur ordinateur */ .hud-cursor{display:none;position:fixed;left:0;top:0;width:18px;height:18px;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);opacity:0;transition:width .18s ease,height .18s ease,opacity .18s ease} .hud-cursor::before{content:"";position:absolute;inset:0;border:1px solid rgba(242,240,232,.8);border-radius:50%;background:rgba(217,54,43,.08);box-shadow:0 0 10px rgba(217,54,43,.18)} .hud-cursor::after{content:"";position:absolute;left:50%;top:50%;width:4px;height:4px;transform:translate(-50%,-50%);border-radius:50%;background:var(--red);box-shadow:0 0 6px rgba(217,54,43,.65)} .hud-cursor.active{width:28px;height:28px} .hud-cursor.active::before{border-color:var(--red);background:rgba(217,54,43,.12);box-shadow:0 0 14px rgba(217,54,43,.25)} @media (hover:hover) and (pointer:fine){body,body *{cursor:none!important}.hud-cursor{display:block}} .ep-listen{display:inline-flex;margin-top:10px;color:var(--cream);font:700 .66rem var(--body);letter-spacing:.08em;text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:5px}
+.ep-listen:hover{color:var(--red)}
+.opt.good{box-shadow:0 0 0 2px #b7f0b5,0 0 24px rgba(94,220,118,.28)!important;background:#d8f8d5!important;color:#101113!important;border-color:#77d681!important}
+.opt.bad{box-shadow:0 0 0 2px #ffb1a9,0 0 24px rgba(217,54,43,.3)!important}
+.answer.ok::before{content:"✓ BONNE RÉPONSE — ";font:700 .58rem var(--body);letter-spacing:.1em;display:block;margin-bottom:.3rem;color:#8ee09b}
+.answer.ko::before{content:"✕ PAS TOUT À FAIT — ";font:700 .58rem var(--body);letter-spacing:.1em;display:block;margin-bottom:.3rem;color:#ff8176}
+
 </style>
 
 <div id="gate" role="dialog" aria-label="Démarrer le site">
@@ -470,15 +475,7 @@ input[type=range]{flex:1;accent-color:var(--red);height:28px}
           </div>
         </div>
         <div class="apex-guide" lang="fr">
-          <p class="apex-note"><strong>Comment explorer le modèle ?</strong> Ce projet APEX présente une monoplace de Formule 1 conceptuelle. Il ne contient pas de voiture de route classique.</p>
-          <ul>
-            <li><b>Faire pivoter :</b> clique et fais glisser la souris sur le modèle.</li>
-            <li><b>Zoomer :</b> utilise la molette ou le pincement sur écran tactile.</li>
-            <li><b>Démonter / remonter :</b> déplace le curseur d’assemblage.</li>
-            <li><b>Examiner une pièce :</b> clique sur un élément du modèle lorsqu’il est sélectionnable.</li>
-            <li><b>Changer de vue :</b> utilise les commandes de vue de l’interface 3D.</li>
-          </ul>
-          <p class="apex-note">L’interface native du projet APEX reste en anglais ; les explications de cette page sont en français.</p>
+          <p class="apex-note"><strong>À propos de cette expérience 3D.</strong> APEX est un projet indépendant créé par <a href="https://github.com/filan214/F1---2026-Car-Details" target="_blank" rel="noopener noreferrer">son auteur sur GitHub</a>. Je ne l’ai pas développé : je l’intègre ici comme démonstration interactive pour explorer la conception d’une monoplace de Formule 1 conceptuelle et la manière dont ses éléments s’assemblent. Le modèle ne représente pas une voiture de route classique. Pour faire pivoter la monoplace, clique et fais glisser ; pour zoomer, utilise la molette ou le pincement tactile ; pour séparer ou réunir les éléments, déplace le curseur d’assemblage ; clique sur une pièce si tu veux l’examiner et utilise les commandes de vue pour changer d’angle. L’interface d’origine étant chargée depuis le projet externe, ses boutons et libellés restent en anglais. Repères utiles : « Explode » signifie démonter / écarter les pièces, « Reset » réinitialiser la vue, « Auto Rotate » faire tourner le modèle automatiquement, et « Top / Side / Perspective » choisir une vue du dessus, de côté ou en perspective. Ces traductions sont un aide-mémoire ; elles ne remplacent pas les libellés dans l’iframe.</p>
         </div>
       </article>
     </div>
@@ -490,14 +487,13 @@ input[type=range]{flex:1;accent-color:var(--red);height:28px}
     <div class="eyebrow rv">04 — Les épisodes pilotes</div>
     <h2 class="h2 rv">Deux épisodes<br><em>pour poser l'univers</em></h2>
     <div class="eps">
-      <article class="ep rv" id="ep1"><img src="assets/ep01-r5.jpg" alt="Renault 5 jaune, phares allumés" loading="lazy"><div class="ep-in"><div class="n">01</div><span class="badge">Bientôt</span>
-        <h3>La R5 : comment une voiture devient-elle iconique ?</h3><p>Design rétro-futuriste, renaissance électrique, héritage sportif. Minute F1 en écho.</p></div></article>
+      <article class="ep rv" id="ep1"><img src="assets/ep01-r5.jpg" alt="Renault 5 jaune, phares allumés" loading="lazy"><div class="ep-in"><div class="n">01</div><span class="badge">Disponible</span>
+        <h3>La R5 : comment une voiture devient-elle iconique ?</h3><p>Design rétro-futuriste, renaissance électrique, héritage sportif. Minute F1 en écho.</p><a class="ep-listen" href="https://open.spotify.com/episode/6ID40YcedZYs8Sfx84VRUa?si=RuX1W4ZjQiafATNKpd2aQQ" target="_blank" rel="noopener noreferrer">Écouter l’épisode 01 sur Spotify ↗</a></div></article>
       <article class="ep rv" id="ep2"><img src="assets/ep02-lineup.jpg" alt="BMW, Alpine et Porsche, vues de face" loading="lazy"><div class="ep-in"><div class="n">02</div><span class="badge">Bientôt</span>
         <h3>Pourquoi reconnaît-on une voiture avant son logo ?</h3><p>Silhouettes, feux, calandres : Porsche, BMW, Alpine, Cupra et leurs codes visuels.</p></div></article>
     </div>
     <div class="links rv">
-      <!-- CTA unique : renseigner CTA_URL dans le script (lien Spotify) quand il existe -->
-      <a class="btn red" id="cta" aria-disabled="true">Écouter sur Spotify · bientôt</a>
+      <a class="btn red" id="cta" href="https://open.spotify.com/episode/6ID40YcedZYs8Sfx84VRUa?si=RuX1W4ZjQiafATNKpd2aQQ" target="_blank" rel="noopener noreferrer">Écouter l’épisode 01 sur Spotify ↗</a>
     </div>
   </div>
 </section>
@@ -518,17 +514,13 @@ input[type=range]{flex:1;accent-color:var(--red);height:28px}
     <p class="big" id="endBig" data-text="Des voitures, des histoires, des *idées*."></p>
     <div class="links rv"><button class="btn ghost" id="kill">Couper le moteur</button></div>
     <div class="foot"><span>CARAKTÈRE · Ce que les voitures racontent</span><span>Pauline Gazengel · 2026</span></div>
-    <nav class="legal" aria-label="Informations légales"><a href="confidentialite.html">Politique de confidentialité</a><a href="cgu.html">CGU et mentions légales</a><button type="button" id="cbOpen">Gérer mes cookies</button></nav>
+    <nav class="legal" aria-label="Informations légales"><a href="confidentialite.html">Politique de confidentialité</a><a href="cgu.html">CGU et mentions légales</a></nav>
   </div>
 </section>
 </main>
 
-<div class="cb" id="cb" role="dialog" aria-label="Consentement aux cookies" aria-live="polite">
-  <p>Ce site n'utilise aucun cookie publicitaire. Avec ton accord, une mesure d'audience anonyme nous aide à savoir combien de personnes le visitent. <a href="confidentialite.html">En savoir plus</a></p>
-  <div class="acts"><button class="btn" id="cbNo" type="button">Refuser</button><button class="btn" id="cbYes" type="button">Accepter</button></div>
-</div>
-
 <div class="dark-veil" id="veil" aria-hidden="true"><div><div class="bulbs"><i></i><i></i></div><p>Moteur coupé</p><button class="btn" id="restart">Redémarrer</button></div></div>
+<div class="hud-cursor" id="hudCursor" aria-hidden="true"></div>
 
 <script>
 (function(){
@@ -632,7 +624,7 @@ var Snd={ctx:null,master:null,n:null,running:false,muted:false,
 
 /* ================= ÉTAT MOTEUR / HUD ================= */
 var S={on:false,speed:0,gear:0,rpm:0,prof:null,lastY:window.pageYOffset||0};
-var GM=[45,85,130,185,245,320];
+var GM=[20,40,60,80,100,120];
 var elSpd=$('#spd'),elGear=$('#gear'),elRpm=$('#rpm');
 function profile(pts){S.prof={t0:performance.now(),pts:pts}}
 function profVal(now){
@@ -657,8 +649,9 @@ function engineStop(){try{engineAudio.pause();engineAudio.currentTime=0;}catch(e
 var lastGear=0;
 function loop(now){
   var y=window.pageYOffset||0,dy=Math.abs(y-S.lastY);S.lastY=y;
-  var tgt=S.on||!Snd.ctx?Math.min(320,dy*5.5):0;
-  S.speed+=(tgt-S.speed)*(tgt>S.speed?.12:.04); if(S.speed<.4)S.speed=0;
+  /* La vitesse représente l'intensité du défilement, plafonnée à 120 km/h. */
+  var tgt=Math.min(120,dy*7.5);
+  S.speed+=(tgt-S.speed)*(tgt>S.speed?.18:.085); if(S.speed<1)S.speed=0;
   var g=0;while(g<5&&S.speed>GM[g])g++;
   var gmin=g?GM[g-1]:0,sr=900+clamp((S.speed-gmin)/(GM[g]-gmin),0,1)*6000;
   if(S.speed===0)sr=950;
@@ -832,7 +825,8 @@ function f1Run(){
   var hold=500+5*600+(700+Math.random()*900);
   setTimeout(function(){
     L5.forEach(function(l){l.classList.remove('on')});msg.textContent='Lights out';Snd.beep(1100,.25,.12);
-    burst([[0,1200],[300,4200],[900,4200],[1300,1500],[1500,900]],1500);
+    /* Le départ F1 déclenche le vrai fichier V8 fourni dans assets, si le son est activé. */
+    if(!Snd.muted){try{engineAudio.currentTime=0;engineAudio.volume=.72;var enginePromise=engineAudio.play();if(enginePromise&&enginePromise.catch)enginePromise.catch(function(){});}catch(e){}}
     setTimeout(function(){f1Busy=false},1800);
   },hold);
 }
@@ -909,28 +903,11 @@ $$('.ep').forEach(function(ep){
   var io3=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){f1Run();runClock();io3.disconnect()}})},{threshold:.5});io3.observe($('#f1'));
 })();
 
-/* ================= CONSENTEMENT + MESURE D'AUDIENCE + CTA ================= */
-// À renseigner quand l'outil est choisi (ex. Plausible : {src:'https://plausible.io/js/script.js',data:{'data-domain':'ton-domaine.fr'}}). Vide = rien n'est chargé.
-var ANALYTICS={src:'',data:{}};
-// Lien Spotify du podcast : renseigner ici, le bouton devient actif.
-var CTA_URL='';
+/* ================= LIEN SPOTIFY ================= */
+var CTA_URL='https://open.spotify.com/episode/6ID40YcedZYs8Sfx84VRUa?si=RuX1W4ZjQiafATNKpd2aQQ';
 (function(){
-  var KEY='crt-consent',cb=$('#cb');
-  function get(){try{return localStorage.getItem(KEY)}catch(e){return null}}
-  function set(v){try{localStorage.setItem(KEY,v)}catch(e){}}
-  function load(){
-    if(!ANALYTICS.src||document.getElementById('crt-an'))return;
-    var sc=document.createElement('script');sc.id='crt-an';sc.defer=true;sc.src=ANALYTICS.src;
-    for(var k in ANALYTICS.data)sc.setAttribute(k,ANALYTICS.data[k]);document.head.appendChild(sc);
-  }
-  function show(){cb.classList.add('show');$('#cbYes').focus({preventScroll:true})}
-  function hide(){cb.classList.remove('show')}
-  $('#cbYes').addEventListener('click',function(){set('yes');hide();load()});
-  $('#cbNo').addEventListener('click',function(){set('no');hide()});
-  $('#cbOpen').addEventListener('click',show);
-  window.__cbAsk=function(){if(!get())setTimeout(show,1800)};
-  if(get()==='yes')load();
-  var cta=$('#cta');if(CTA_URL){cta.href=CTA_URL;cta.target='_blank';cta.rel='noopener noreferrer';cta.removeAttribute('aria-disabled');cta.textContent='Écouter sur Spotify'}
+  var cta=$('#cta');
+  if(CTA_URL){cta.href=CTA_URL;cta.target='_blank';cta.rel='noopener noreferrer';cta.removeAttribute('aria-disabled');cta.textContent='Écouter l’épisode 01 sur Spotify ↗';}
 })();
 
 /* ================= START / MUTE / KILL ================= */
@@ -948,7 +925,7 @@ function begin(withSound){
   if(withSound)engineStart();else S.on=true;
   loadApex();
   setTimeout(heroIntro,withSound?950:350);
-  window.scrollTo(0,0);window.__cbAsk&&window.__cbAsk();
+  window.scrollTo(0,0);
 }
 function setMute(m){
   Snd.muted=m;engineAudio.muted=m;engineAudio.volume=m?0:0.72;
@@ -969,6 +946,14 @@ $('#restart').addEventListener('click',function(){
   veil.classList.remove('on');veil.setAttribute('aria-hidden','true');
   window.scrollTo(0,0);if(Snd.ctx&&!Snd.muted)engineStart();setTimeout(heroIntro,Snd.ctx&&!Snd.muted?950:200);
 });
+/* Curseur minimal, uniquement pour souris/clavier sur ordinateur. */
+var hudCursor=$('#hudCursor');
+if(hudCursor&&window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches){
+  var cursorVisible=false;
+  addEventListener('pointermove',function(e){hudCursor.style.left=e.clientX+'px';hudCursor.style.top=e.clientY+'px';hudCursor.style.opacity='1';cursorVisible=true;},{passive:true});
+  addEventListener('pointerleave',function(){hudCursor.style.opacity='0';cursorVisible=false;});
+  document.addEventListener('pointerover',function(e){var t=e.target;if(t&&t.closest&&t.closest('a,button,[role="button"],input,select,summary,.car-piece'))hudCursor.classList.add('active');else hudCursor.classList.remove('active');});
+}
 requestAnimationFrame(loop);tone();
 })();
 </script>
