@@ -20,6 +20,20 @@
 @media(prefers-reduced-motion:reduce){.apex-frame-shell{scroll-behavior:auto}}
 
 </style>
+
+<style>
+/* ---------- DOSSIER DE PRÉSENTATION + TEASER ---------- */
+#teaser,#dossier{padding:clamp(40px,8vw,100px) 0}
+.teaser-card,.dossier-card{margin-top:1.5rem;border:1px solid var(--line,rgba(255,255,255,.16));border-radius:18px;overflow:hidden;background:rgba(255,255,255,.025)}
+.teaser-card{max-width:520px;margin-left:auto;margin-right:auto}
+.teaser-video{display:block;width:min(100%,360px);height:auto;max-height:72vh;aspect-ratio:9/16;object-fit:contain;background:#080808;margin:0 auto}
+.teaser-caption,.dossier-caption{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.teaser-caption p,.dossier-caption p{margin:0;color:var(--soft);max-width:none;width:100%}
+.dossier-frame{display:block;width:100%;height:min(78vh,900px);min-height:520px;border:0;background:#171717}
+.dossier-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:1rem}
+@media(max-width:700px){.dossier-frame{height:68vh;min-height:420px}.teaser-card{max-width:100%}.teaser-video{width:min(100%,360px);max-height:68vh}.teaser-caption,.dossier-caption{align-items:flex-start}}
+</style>
+
 </head><body>
 <title>CARAKTÈRE · Podcast automobile</title>
 <meta name="description" content="CARAKTÈRE, le podcast qui décrypte l'automobile au-delà de la fiche technique : design, marque, histoire. Pourquoi une voiture nous marque-t-elle ?">
@@ -352,8 +366,8 @@ input[type=range]{flex:1;accent-color:var(--red);height:28px}
   .rv{transition:none}.brand .ch{transition:none}.row{transform:none!important}.eq i,.bars i,.start::before,.go i,.gate-hint{animation:none}
 }
 
-/* Curseur minimal : point rouge et halo discret, uniquement sur ordinateur */ .hud-cursor{display:none;position:fixed;left:0;top:0;width:18px;height:18px;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);opacity:0;transition:width .18s ease,height .18s ease,opacity .18s ease} .hud-cursor::before{content:"";position:absolute;inset:0;border:1px solid rgba(242,240,232,.8);border-radius:50%;background:rgba(217,54,43,.08);box-shadow:0 0 10px rgba(217,54,43,.18)} .hud-cursor::after{content:"";position:absolute;left:50%;top:50%;width:4px;height:4px;transform:translate(-50%,-50%);border-radius:50%;background:var(--red);box-shadow:0 0 6px rgba(217,54,43,.65)} .hud-cursor.active{width:28px;height:28px} .hud-cursor.active::before{border-color:var(--red);background:rgba(217,54,43,.12);box-shadow:0 0 14px rgba(217,54,43,.25)} @media (hover:hover) and (pointer:fine){body,body *{cursor:none!important}.hud-cursor{display:block}} .ep-listen{display:inline-flex;margin-top:10px;color:var(--cream);font:700 .66rem var(--body);letter-spacing:.08em;text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:5px}
-.ep-listen:hover{color:var(--red)}
+/* Curseur minimal : point rouge et halo discret, uniquement sur ordinateur */ .hud-cursor{display:none;position:fixed;left:0;top:0;width:18px;height:18px;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);opacity:0;transition:width .18s ease,height .18s ease,opacity .18s ease} .hud-cursor::before{content:"";position:absolute;inset:0;border:1px solid rgba(242,240,232,.8);border-radius:50%;background:rgba(217,54,43,.08);box-shadow:0 0 10px rgba(217,54,43,.18)} .hud-cursor::after{content:"";position:absolute;left:50%;top:50%;width:4px;height:4px;transform:translate(-50%,-50%);border-radius:50%;background:var(--red);box-shadow:0 0 6px rgba(217,54,43,.65)} .hud-cursor.active{width:28px;height:28px} .hud-cursor.active::before{border-color:var(--red);background:rgba(217,54,43,.12);box-shadow:0 0 14px rgba(217,54,43,.25)} @media (hover:hover) and (pointer:fine){body,body *{cursor:none!important}.hud-cursor{display:block}} .ep-listen{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;margin-top:10px;padding:12px 15px;border:1px solid var(--red);border-radius:3px;background:var(--red);color:#fff;font:700 .66rem var(--body);letter-spacing:.08em;text-decoration:none;transition:background .2s ease,color .2s ease,border-color .2s ease}
+.ep-listen:hover{background:var(--cream);border-color:var(--cream);color:var(--ink)}
 .opt.good{box-shadow:0 0 0 2px #b7f0b5,0 0 24px rgba(94,220,118,.28)!important;background:#d8f8d5!important;color:#101113!important;border-color:#77d681!important}
 .opt.bad{box-shadow:0 0 0 2px #ffb1a9,0 0 24px rgba(217,54,43,.3)!important}
 .answer.ok::before{content:"✓ BONNE RÉPONSE — ";font:700 .58rem var(--body);letter-spacing:.1em;display:block;margin-bottom:.3rem;color:#8ee09b}
@@ -489,11 +503,41 @@ input[type=range]{flex:1;accent-color:var(--red);height:28px}
     <div class="eps">
       <article class="ep rv" id="ep1"><img src="assets/ep01-r5.jpg" alt="Renault 5 jaune, phares allumés" loading="lazy"><div class="ep-in"><div class="n">01</div><span class="badge">Disponible</span>
         <h3>La R5 : comment une voiture devient-elle iconique ?</h3><p>Design rétro-futuriste, renaissance électrique, héritage sportif. Minute F1 en écho.</p><a class="ep-listen" href="https://open.spotify.com/episode/6ID40YcedZYs8Sfx84VRUa?si=RuX1W4ZjQiafATNKpd2aQQ" target="_blank" rel="noopener noreferrer">Écouter l’épisode 01 sur Spotify ↗</a></div></article>
-      <article class="ep rv" id="ep2"><img src="assets/ep02-lineup.jpg" alt="BMW, Alpine et Porsche, vues de face" loading="lazy"><div class="ep-in"><div class="n">02</div><span class="badge">Bientôt</span>
-        <h3>Pourquoi reconnaît-on une voiture avant son logo ?</h3><p>Silhouettes, feux, calandres : Porsche, BMW, Alpine, Cupra et leurs codes visuels.</p></div></article>
+      <article class="ep rv" id="ep2"><img src="assets/ep02-lineup.jpg" alt="BMW, Alpine et Porsche, vues de face" loading="lazy"><div class="ep-in"><div class="n">02</div><span class="badge">Disponible</span>
+        <h3>Pourquoi reconnaît-on une voiture avant son logo ?</h3><p>Silhouettes, feux, calandres : Porsche, BMW, Alpine, Cupra et leurs codes visuels.</p><a class="ep-listen" href="https://open.spotify.com/episode/626IL25lZGgIAwrA1FJ0xw?si=h9kYmBb0TEqjDy5YeDigaw" target="_blank" rel="noopener noreferrer">Écouter l’épisode 02 sur Spotify ↗</a></div></article>
     </div>
     <div class="links rv">
-      <a class="btn red" id="cta" href="https://open.spotify.com/episode/6ID40YcedZYs8Sfx84VRUa?si=RuX1W4ZjQiafATNKpd2aQQ" target="_blank" rel="noopener noreferrer">Écouter l’épisode 01 sur Spotify ↗</a>
+      <a class="btn red" id="cta" href="https://open.spotify.com/episode/626IL25lZGgIAwrA1FJ0xw?si=h9kYmBb0TEqjDy5YeDigaw" target="_blank" rel="noopener noreferrer">Écouter le dernier épisode sur Spotify ↗</a>
+    </div>
+  </div>
+</section>
+
+
+<section id="teaser">
+  <div class="wrap">
+    <div class="eyebrow rv">05 — Le teaser</div>
+    <h2 class="h2 rv">Sans logo,<br><em>tu la reconnais ?</em></h2>
+    <p class="rv">Le format court de CARAKTÈRE : une question, des indices et plusieurs terrains de jeu, de la route à la piste en passant par le modélisme.</p>
+    <div class="teaser-card rv">
+      <video class="teaser-video" controls playsinline preload="auto" poster="assets/ep02-lineup.jpg">
+        <source src="assets/teaser-caractere.mp4" type="video/mp4">
+        Votre navigateur ne prend pas en charge la lecture vidéo. <a href="assets/teaser-caractere.mp4">Voir le teaser</a>.
+      </video>
+      <div class="teaser-caption"><p><strong>Un format court pour faire connaître le podcast.</strong> Ce teaser a été pensé pour Instagram Reels : un montage rythmé qui donne un aperçu de l’univers de CARAKTÈRE et invite à découvrir les épisodes. Son format vertical fonctionne aussi sur TikTok et YouTube Shorts.</p><span class="badge">Instagram Reels · TikTok · Shorts</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="dossier">
+  <div class="wrap">
+    <div class="eyebrow rv">06 — Le projet en détail</div>
+    <h2 class="h2 rv">Le dossier de<br><em>présentation</em></h2>
+    <p class="rv">Retrouve ici le dossier complet de CARAKTÈRE : le concept, le public, le positionnement, le format des épisodes et l’univers visuel.</p>
+    <div class="dossier-card rv">
+      <iframe class="dossier-frame" src="CARAKTERE_presentation.pdf#view=FitH" title="Dossier de présentation CARAKTÈRE — 18 pages" loading="lazy"></iframe>
+      <div class="dossier-caption"><p>Le PDF est consultable directement sur cette page. Tu peux aussi l’ouvrir dans un nouvel onglet ou le télécharger.</p>
+        <div class="dossier-actions"><a class="btn red" href="CARAKTERE_presentation.pdf" target="_blank" rel="noopener noreferrer">Ouvrir le PDF ↗</a><a class="btn ghost" href="CARAKTERE_presentation.pdf" download>Télécharger le dossier ↓</a></div>
+      </div>
     </div>
   </div>
 </section>
@@ -904,10 +948,10 @@ $$('.ep').forEach(function(ep){
 })();
 
 /* ================= LIEN SPOTIFY ================= */
-var CTA_URL='https://open.spotify.com/episode/6ID40YcedZYs8Sfx84VRUa?si=RuX1W4ZjQiafATNKpd2aQQ';
+var CTA_URL='https://open.spotify.com/episode/626IL25lZGgIAwrA1FJ0xw?si=h9kYmBb0TEqjDy5YeDigaw';
 (function(){
   var cta=$('#cta');
-  if(CTA_URL){cta.href=CTA_URL;cta.target='_blank';cta.rel='noopener noreferrer';cta.removeAttribute('aria-disabled');cta.textContent='Écouter l’épisode 01 sur Spotify ↗';}
+  if(CTA_URL){cta.href=CTA_URL;cta.target='_blank';cta.rel='noopener noreferrer';cta.removeAttribute('aria-disabled');cta.textContent='Écouter le dernier épisode sur Spotify ↗';}
 })();
 
 /* ================= START / MUTE / KILL ================= */
