@@ -24,14 +24,25 @@
 <style>
 /* ---------- DOSSIER DE PRÉSENTATION + TEASER ---------- */
 #teaser,#dossier{padding:clamp(40px,8vw,100px) 0}
-.teaser-card,.dossier-card{margin-top:1.5rem;border:1px solid var(--line,rgba(255,255,255,.16));border-radius:18px;overflow:hidden;background:rgba(255,255,255,.025)}
-.teaser-card{max-width:520px;margin-left:auto;margin-right:auto}
-.teaser-video{display:block;width:min(100%,360px);height:auto;max-height:72vh;aspect-ratio:9/16;object-fit:contain;background:#080808;margin:0 auto}
-.teaser-caption,.dossier-caption{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.teaser-caption p,.dossier-caption p{margin:0;color:var(--soft);max-width:none;width:100%}
+.teaser-card,.dossier-card{margin-top:1.5rem;border:1px solid var(--line,rgba(255,255,255,.16));border-radius:18px;overflow:hidden;background:linear-gradient(115deg,rgba(255,255,255,.045),rgba(255,255,255,.018))}
+.teaser-card{width:100%;display:grid;grid-template-columns:minmax(240px,.9fr) minmax(0,1.1fr);align-items:center;gap:clamp(24px,5vw,64px);padding:clamp(18px,3vw,38px)}
+.teaser-video{display:block;width:min(100%,360px);height:auto;aspect-ratio:auto;object-fit:cover;background:transparent;margin:0 auto;border-radius:12px;box-shadow:0 18px 48px rgba(0,0,0,.28)}
+.teaser-caption{padding:clamp(8px,2vw,22px) clamp(0px,1vw,14px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:22px;min-width:0}
+.teaser-caption p{margin:0;color:var(--soft);max-width:48ch;width:100%;font-size:clamp(.98rem,1.15vw,1.08rem);line-height:1.85}
+.teaser-caption p strong{display:block;color:var(--cream);font:700 clamp(1.05rem,1.6vw,1.35rem) var(--display);letter-spacing:.025em;line-height:1.35;margin-bottom:12px}
+.teaser-platforms{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;padding-top:16px;border-top:1px solid var(--line,rgba(255,255,255,.16));width:100%}
+.teaser-platforms-label{width:100%;font:700 .58rem var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.teaser-platforms span:not(.teaser-platforms-label){font:600 .66rem var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--cream);opacity:.82}
+.teaser-platforms span:not(.teaser-platforms-label)+span:not(.teaser-platforms-label)::before{content:"/";color:var(--red);opacity:.8;margin-right:10px}
 .dossier-frame{display:block;width:100%;height:min(78vh,900px);min-height:520px;border:0;background:#171717}
 .dossier-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:1rem}
-@media(max-width:700px){.dossier-frame{height:68vh;min-height:420px}.teaser-card{max-width:100%}.teaser-video{width:min(100%,360px);max-height:68vh}.teaser-caption,.dossier-caption{align-items:flex-start}}
+@media(max-width:700px){
+  .dossier-frame{height:68vh;min-height:420px}
+  .teaser-card{grid-template-columns:minmax(0,1fr);gap:24px;padding:18px}
+  .teaser-video{width:min(100%,320px)}
+  .teaser-caption{padding:8px 2px 4px;gap:18px}
+  .teaser-caption p{max-width:none}
+}
 </style>
 
 </head><body>
@@ -519,11 +530,17 @@ input[type=range]{flex:1;accent-color:var(--red);height:28px}
     <h2 class="h2 rv">Sans logo,<br><em>tu la reconnais ?</em></h2>
     <p class="rv">Le format court de CARAKTÈRE : une question, des indices et plusieurs terrains de jeu, de la route à la piste en passant par le modélisme.</p>
     <div class="teaser-card rv">
-      <video class="teaser-video" controls playsinline preload="auto" poster="assets/ep02-lineup.jpg">
+      <video class="teaser-video" controls playsinline preload="auto">
         <source src="assets/teaser-caractere.mp4" type="video/mp4">
         Votre navigateur ne prend pas en charge la lecture vidéo. <a href="assets/teaser-caractere.mp4">Voir le teaser</a>.
       </video>
-      <div class="teaser-caption"><p><strong>Un format court pour faire connaître le podcast.</strong> Ce teaser a été pensé pour Instagram Reels : un montage rythmé qui donne un aperçu de l’univers de CARAKTÈRE et invite à découvrir les épisodes. Son format vertical fonctionne aussi sur TikTok et YouTube Shorts.</p><span class="badge">Instagram Reels · TikTok · Shorts</span></div>
+      <div class="teaser-caption">
+        <p><strong>Un format court pour faire connaître le podcast.</strong> Ce teaser a été pensé pour Instagram Reels : un montage rythmé qui donne un aperçu de l’univers de CARAKTÈRE et invite à découvrir les épisodes. Son format vertical fonctionne aussi sur TikTok et YouTube Shorts.</p>
+        <div class="teaser-platforms" aria-label="Plateformes de diffusion">
+          <span class="teaser-platforms-label">Pensé pour les formats verticaux</span>
+          <span>Instagram Reels</span><span>TikTok</span><span>YouTube Shorts</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -684,6 +701,10 @@ function burst(pts,ms){
 var engineAudio = new Audio('assets/v8.mp3');
 engineAudio.preload = 'auto';
 engineAudio.loop = false;
+/* Son dédié à l'animation des feux de départ : distinct du V8 d'accueil. */
+var f1Audio = new Audio('assets/f1_monza.mp3');
+f1Audio.preload = 'auto';
+f1Audio.loop = false;
 function engineStart(){
   S.on=true;
   if(Snd.muted)return;
@@ -865,12 +886,12 @@ function runClock(){
 var f1Busy=false;
 function f1Run(){
   if(f1Busy)return;f1Busy=true;var L5=$$('#f1 .lights i'),msg=$('#f1msg');msg.textContent='';L5.forEach(function(l){l.classList.remove('on')});
-  L5.forEach(function(l,i){setTimeout(function(){l.classList.add('on');Snd.beep(660,.12,.14)},500+i*600)});
+  L5.forEach(function(l,i){setTimeout(function(){l.classList.add('on')},500+i*600)});
   var hold=500+5*600+(700+Math.random()*900);
   setTimeout(function(){
-    L5.forEach(function(l){l.classList.remove('on')});msg.textContent='Lights out';Snd.beep(1100,.25,.12);
-    /* Le départ F1 déclenche le vrai fichier V8 fourni dans assets, si le son est activé. */
-    if(!Snd.muted){try{engineAudio.currentTime=0;engineAudio.volume=.72;var enginePromise=engineAudio.play();if(enginePromise&&enginePromise.catch)enginePromise.catch(function(){});}catch(e){}}
+    L5.forEach(function(l){l.classList.remove('on')});msg.textContent='Lights out';
+    /* Le départ utilise le son F1 Monza, sans relancer le V8 d'accueil. */
+    if(!Snd.muted){try{f1Audio.currentTime=0;f1Audio.volume=.82;var f1Promise=f1Audio.play();if(f1Promise&&f1Promise.catch)f1Promise.catch(function(){});}catch(e){}}
     setTimeout(function(){f1Busy=false},1800);
   },hold);
 }
@@ -964,6 +985,8 @@ function loadApex(){
 }
 function begin(withSound){
   if(S.began)return;S.began=true;
+  /* Initialise Web Audio pendant le clic utilisateur pour activer les sons du jeu des phares. */
+  if(withSound){Snd.init();if(Snd.ctx&&Snd.ctx.state==='suspended'){Snd.ctx.resume();}}
   setMute(!withSound);
   $('#gate').classList.add('off');document.body.classList.remove('locked');document.body.classList.add('on');
   if(withSound)engineStart();else S.on=true;
@@ -972,10 +995,14 @@ function begin(withSound){
   window.scrollTo(0,0);
 }
 function setMute(m){
-  Snd.muted=m;engineAudio.muted=m;engineAudio.volume=m?0:0.72;
+  /* Si le site a été lancé sans son, initialise Web Audio au premier rétablissement du son. */
+  if(!m&&!Snd.ctx)Snd.init();
+  Snd.setMuted(m);
+  if(!m&&Snd.ctx&&Snd.ctx.state==='suspended'){Snd.ctx.resume();}
+  engineAudio.muted=m;engineAudio.volume=m?0:0.72;f1Audio.muted=m;f1Audio.volume=m?0:0.82;
   var b=$('#snd');b.setAttribute('aria-pressed',m?'true':'false');$('#sndLab').textContent=m?'Son coupé':'Son';
   if(!m&&S.began&&engineAudio.paused){try{engineAudio.play().catch(function(){});}catch(e){}}
-  if(m)engineAudio.pause();
+  if(m){engineAudio.pause();f1Audio.pause();}
 }
 $('#startBtn').addEventListener('click',function(){begin(true)});
 $('#startMute').addEventListener('click',function(){begin(false)});
